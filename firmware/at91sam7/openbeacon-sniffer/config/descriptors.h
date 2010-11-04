@@ -113,7 +113,7 @@ const char pxConfigDescriptor1[] = {
   0x04,				/* bFunctionLength                         */
   0x24,				/* bDescriptor type: CS_INTERFACE          */
   0x02,				/* bDescriptor subtype: ACM Func Desc      */
-  0x00,				/* bmCapabilities: We don't support squat  */
+  0x06,				/* bmCapabilities: We don't support squat  */
 
   /* Union Functional Descriptor                                           */
   0x05,				/* bFunctionLength                         */
@@ -127,8 +127,8 @@ const char pxConfigDescriptor1[] = {
   0x05,				/* bFunctionLength                         */
   0x24,				/* bDescriptor type: CS_INTERFACE          */
   0x01,				/* bDescriptor subtype: Call Management Func */
-  0x00,				/* bmCapabilities: D1 + D0                 */
-  0x01,				/* bDataInterface: Data Class Interface 1  */
+  0x01,				/* bmCapabilities: D1 + D0                 */
+  0xFF,				/* bDataInterface: Data Class Interface 1  */
 
   /* CDC Control - Endpoint 3 descriptor
      This endpoint serves as a notification element.                       */
@@ -208,7 +208,7 @@ const char pxConfigDescriptor2[] = {
   0x04,				/* bFunctionLength                         */
   0x24,				/* bDescriptor type: CS_INTERFACE          */
   0x02,				/* bDescriptor subtype: ACM Func Desc      */
-  0x00,				/* bmCapabilities: We don't support squat  */
+  0x06,				/* bmCapabilities: We don't support squat  */
 
   /* Union Functional Descriptor                                           */
   0x05,				/* bFunctionLength                         */
@@ -222,8 +222,8 @@ const char pxConfigDescriptor2[] = {
   0x05,				/* bFunctionLength                         */
   0x24,				/* bDescriptor type: CS_INTERFACE          */
   0x01,				/* bDescriptor subtype: Call Management Func */
-  0x00,				/* bmCapabilities: D1 + D0                 */
-  0x01,				/* bDataInterface: Data Class Interface 1  */
+  0x01,				/* bmCapabilities: D1 + D0                 */
+  0xFF,				/* bDataInterface: Data Class Interface 1  */
 
   /* CDC Control - Endpoint 3 descriptor
      This endpoint serves as a notification element.                       */
@@ -293,4 +293,5 @@ const char pxDeviceDescriptor[] = {
   0x00,				/* SerialNumber                 */
   sizeof(pxConfigDescriptorList)/sizeof(pxConfigDescriptorList[0])				/* bNumConfigs                  */
 };
+
 
