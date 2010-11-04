@@ -27,7 +27,7 @@ simple_strtoul (const char *cp, char **endp, unsigned int base)
   if (*cp == '0')
     {
       cp++;
-      if ((*cp == 'x') && isxdigit (cp[1]))
+      if ((*cp == 'x') && isxdigit ((int)cp[1]))
 	{
 	  base = 16;
 	  cp++;
@@ -41,14 +41,16 @@ simple_strtoul (const char *cp, char **endp, unsigned int base)
     {
       base = 10;
     }
-  while (isxdigit (*cp) && (value = isdigit (*cp) ? *cp - '0' : (islower (*cp)
+  int icp = *cp;
+  while (isxdigit (icp) && (value = isdigit (icp) ? icp - '0' : (islower (icp)
 								 ?
-								 toupper (*cp)
+								 toupper (icp)
 								 : *cp) -
 			    'A' + 10) < base)
     {
       result = result * base + value;
       cp++;
+      icp = *cp;
     }
   if (endp)
     *endp = (char *) cp;
