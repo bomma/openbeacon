@@ -36,9 +36,13 @@ __CONFIG (0x03d4);
 __EEPROM_DATA (0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
 
 volatile const u_int32_t oid = 0xFFFFFFFF, seed = 0xFFFFFFFF;
-
+/*
 static const long xxtea_key[4] =
   { 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF };
+*/
+static const long xxtea_key[4] =
+  { 0x8e7d6649, 0x7e82fa5b, 0xddd4541e, 0xe23742cb };
+
 static u_int32_t seq = 0;
 static u_int16_t code_block;
 

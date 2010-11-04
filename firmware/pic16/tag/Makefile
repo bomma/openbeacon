@@ -1,4 +1,4 @@
-COMPILER_PATH=/usr/hitech/picc/9.80/bin/
+COMPILER_PATH=/usr/hitech/picc/9.80-demo/bin/
 PK2=/usr/local/bin/pk2cmd
 CC=$(COMPILER_PATH)picc
 
