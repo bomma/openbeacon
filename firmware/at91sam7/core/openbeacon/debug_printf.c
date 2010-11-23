@@ -41,10 +41,9 @@ simple_strtoul (const char *cp, char **endp, unsigned int base)
     {
       base = 10;
     }
-  int icp = *cp;
-  while (isxdigit (icp) && (value = isdigit (icp) ? icp - '0' : (islower (icp)
+  while (isxdigit ((int)*cp) && (value = isdigit ((int)*cp) ? *cp - '0' : (islower ((int)*cp)
 								 ?
-								 toupper (icp)
+								 toupper ((int)*cp)
 								 : *cp) -
 			    'A' + 10) < base)
     {
